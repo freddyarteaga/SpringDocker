@@ -19,3 +19,13 @@ docker run -d -p 8001:8001 --rm --name msvc-usuarios --network spring usuarios
 CORRER IMAGEN CURSOS CON LAS BANDERAS
 docker run -d -p 8002:8002 --rm --name msvc-cursos --network spring cursos
 
+LISTAMOS VOLUMENES
+docker volume ls
+
+INGRESAMOS A SH CLIENTE MYSQL
+docker run -it --rm --network spring mysql:8 bash
+mysql -hmysql8 -uroot -p
+INGRESAMOS A SH CLIENTE POSTGRES
+ docker run -it --rm --network spring postgres:14-alpine psql -h postgres14 -U postgres
+\c msvc_cursos;
+\dt;
